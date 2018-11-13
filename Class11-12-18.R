@@ -40,3 +40,16 @@ table_poll <- function(district, wave){
   poll
 }
 
+# Q4
+table_poll <- function(district, wave){
+  district <- tolower(district)
+  stopifnot(is.character(district))
+  poll_link <- get_csv_link(district, wave)
+  poll <- read_csv(poll_link, col_names = TRUE)
+  poll
+}
+
+
+
+
+
